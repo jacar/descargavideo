@@ -1,0 +1,14 @@
+node_modules
+dist
+cpanel-build
+*.zip
+.env
+.env.local
+.DS_Store
+yt-dlp.exe
+yt-dlp
+vevo_info.json
+yt_dlp_info.json
+queen.mp3
+tsx_output.log
+error.log
