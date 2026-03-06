@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import { createServer as createViteServer } from "vite";
 import ytdl from "@distube/ytdl-core";
 import path from "path";
@@ -10,8 +11,9 @@ const __dirname = path.dirname(__filename);
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
+  app.use(cors());
   app.use(express.json());
 
   // API Route: Get Video Info
