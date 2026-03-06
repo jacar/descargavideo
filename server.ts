@@ -75,8 +75,9 @@ async function startServer() {
           audioFormats: audioFormats
         });
       } catch (parseError: any) {
-        console.error("JSON parse error:", parseError);
-        res.status(500).json({ error: "Failed to parse video info" });
+        const preview = stdoutData.substring(0, 500);
+        console.error("JSON parse error. Raw output:", preview);
+        res.status(500).json({ error: "Failed to parse video info", raw: preview, stderr: stderrData.substring(0, 300) });
       }
     });
   });
